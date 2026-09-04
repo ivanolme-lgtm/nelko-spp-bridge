@@ -4,10 +4,10 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc="CUPS to classic Bluetooth SPP label-printer bridge (fast path for Nelko PL70e and similar)"
 arch=('any')
-url="https://github.com/ivanolmedo/nelko-spp-bridge"
+url="https://github.com/ivanolme-lgtm/nelko-spp-bridge"
 license=('MIT')
 depends=('python' 'bluez' 'systemd')
-source=("https://github.com/ivanolmedo/nelko-spp-bridge/archive/v$pkgver.tar.gz")
+source=("https://github.com/ivanolme-lgtm/nelko-spp-bridge/archive/v$pkgver.tar.gz")
 sha256sums=('PLACEHOLDER_REPLACED_AT_PUBLISH')
 
 package() {
