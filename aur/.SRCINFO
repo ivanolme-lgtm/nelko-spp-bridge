@@ -9,5 +9,5 @@ pkgbase = nelko-spp-bridge
 	depends = bluez
 	depends = systemd
 	source = https://github.com/ivanolme-lgtm/nelko-spp-bridge/archive/v1.0.0.tar.gz
-	sha256sums = PLACEHOLDER_REPLACED_AT_PUBLISH
+	sha256sums = a089b08dc674637b015b31ac6b9192c78c33dbcb0274d738e53cffcdfb36eab6
 pkgname = nelko-spp-bridge
