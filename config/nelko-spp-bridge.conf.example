@@ -1,0 +1,18 @@
+# nelko-spp-bridge configuration
+# Copy to /etc/nelko-spp-bridge.conf and adjust.
+
+# Classic Bluetooth (BR/EDR) address of the printer.
+# Find it with:  bluetoothctl devices   (the entry whose name has no "-LE")
+PRINTER_ADDRESS=DC:1D:30:58:5D:17
+
+# RFCOMM channel the printer's Serial Port uses (almost always 1).
+# If labels come out blank, try channels 2-10 - some printers have an extra
+# data sink channel that accepts bytes but never prints.
+SPP_CHANNEL=1
+
+# Stable device path exposed to CUPS.
+PTY_SYMLINK=/dev/nelko-pl70e
+
+# UID that must be able to open the device. Default 209 = the 'cups' user on
+# Arch/Omarchy. Set to 0 to keep the device owned by root only.
+CUPS_UID=209

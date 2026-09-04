@@ -1,0 +1,22 @@
+# Maintainer: Ivan Olmedo <ivanolme@gmail.com>
+pkgname=nelko-spp-bridge
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="CUPS to classic Bluetooth SPP label-printer bridge (fast path for Nelko PL70e and similar)"
+arch=('any')
+url="https://github.com/ivanolmedo/nelko-spp-bridge"
+license=('MIT')
+depends=('python' 'bluez' 'systemd')
+source=("https://github.com/ivanolmedo/nelko-spp-bridge/archive/v$pkgver.tar.gz")
+sha256sums=('PLACEHOLDER_REPLACED_AT_PUBLISH')
+
+package() {
+  install -Dm755 "$srcdir/nelko-spp-bridge-$pkgver/nelko_spp_bridge.py" \
+    "$pkgdir/usr/lib/nelko/nelko_spp_bridge.py"
+  install -Dm644 "$srcdir/nelko-spp-bridge-$pkgver/systemd/nelko-spp-bridge.service" \
+    "$pkgdir/usr/lib/systemd/system/nelko-spp-bridge.service"
+  install -Dm644 "$srcdir/nelko-spp-bridge-$pkgver/config/nelko-spp-bridge.conf.example" \
+    "$pkgdir/usr/share/doc/$pkgname/nelko-spp-bridge.conf.example"
+  install -Dm644 "$srcdir/nelko-spp-bridge-$pkgver/README.md" \
+    "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
