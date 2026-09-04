@@ -7,16 +7,26 @@ arch=('any')
 url="https://github.com/ivanolme-lgtm/nelko-spp-bridge"
 license=('MIT')
 depends=('python' 'bluez' 'systemd')
-source=("https://github.com/ivanolme-lgtm/nelko-spp-bridge/archive/v$pkgver.tar.gz")
-sha256sums=('a089b08dc674637b015b31ac6b9192c78c33dbcb0274d738e53cffcdfb36eab6')
+source=(
+  "nelko_spp_bridge.py::https://raw.githubusercontent.com/ivanolme-lgtm/nelko-spp-bridge/v$pkgver/nelko_spp_bridge.py"
+  "nelko-spp-bridge.service::https://raw.githubusercontent.com/ivanolme-lgtm/nelko-spp-bridge/v$pkgver/systemd/nelko-spp-bridge.service"
+  "nelko-spp-bridge.conf.example::https://raw.githubusercontent.com/ivanolme-lgtm/nelko-spp-bridge/v$pkgver/config/nelko-spp-bridge.conf.example"
+  "README.md::https://raw.githubusercontent.com/ivanolme-lgtm/nelko-spp-bridge/v$pkgver/README.md"
+)
+sha256sums=(
+  '178ca4e32beb9bcfdd8d4093caf4670217227c85d8ea7ad0df9c30cb5f6e9bf8'
+  'c3675a1acd6a81b76c0a9d28195fa247c0eeace8cff8a4cfeeb3ce58403b0daa'
+  'd43d1218cd8a265c8f364f11d82d21a5c0ce3c096f72d056c3d649d25cda44c4'
+  'f8af8b20948276c093b177b8480441873de025d41a2e97ab9a9edfc310dd2829'
+)
 
 package() {
-  install -Dm755 "$srcdir/nelko-spp-bridge-$pkgver/nelko_spp_bridge.py" \
+  install -Dm755 "$srcdir/nelko_spp_bridge.py" \
     "$pkgdir/usr/lib/nelko/nelko_spp_bridge.py"
-  install -Dm644 "$srcdir/nelko-spp-bridge-$pkgver/systemd/nelko-spp-bridge.service" \
+  install -Dm644 "$srcdir/nelko-spp-bridge.service" \
     "$pkgdir/usr/lib/systemd/system/nelko-spp-bridge.service"
-  install -Dm644 "$srcdir/nelko-spp-bridge-$pkgver/config/nelko-spp-bridge.conf.example" \
+  install -Dm644 "$srcdir/nelko-spp-bridge.conf.example" \
     "$pkgdir/usr/share/doc/$pkgname/nelko-spp-bridge.conf.example"
-  install -Dm644 "$srcdir/nelko-spp-bridge-$pkgver/README.md" \
+  install -Dm644 "$srcdir/README.md" \
     "$pkgdir/usr/share/doc/$pkgname/README.md"
 }
