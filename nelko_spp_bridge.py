@@ -21,7 +21,7 @@ Configuration
 All settings are optional; defaults apply. Create /etc/nelko-spp-bridge.conf
 with KEY=value lines, or export the environment variables:
 
-    PRINTER_ADDRESS    BT classic address of the printer (e.g. DC:1D:30:58:5D:17)
+    PRINTER_ADDRESS    BT classic address of the printer (e.g. 00:11:22:33:44:55)
     SPP_CHANNEL        RFCOMM channel on the printer (usually 1)
     PTY_SYMLINK        stable device path for CUPS (default /dev/nelko-pl70e)
     CUPS_UID           uid to own the pty slave so the CUPS backend can open it
@@ -43,7 +43,7 @@ import time
 import sys
 
 DEFAULTS = {
-    "PRINTER_ADDRESS": "DC:1D:30:58:5D:17",
+    "PRINTER_ADDRESS": "00:11:22:33:44:55",
     "SPP_CHANNEL": "1",
     "PTY_SYMLINK": "/dev/nelko-pl70e",
     "CUPS_UID": "209",

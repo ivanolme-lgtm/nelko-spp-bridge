@@ -3,7 +3,7 @@
 
 # Classic Bluetooth (BR/EDR) address of the printer.
 # Find it with:  bluetoothctl devices   (the entry whose name has no "-LE")
-PRINTER_ADDRESS=DC:1D:30:58:5D:17
+PRINTER_ADDRESS=00:11:22:33:44:55
 
 # RFCOMM channel the printer's Serial Port uses (almost always 1).
 # If labels come out blank, try channels 2-10 - some printers have an extra

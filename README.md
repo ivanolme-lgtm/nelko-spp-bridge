@@ -50,7 +50,7 @@ Arch/Omarchy users can instead install from the AUR (see `aur/`).
    ```sh
    bluetoothctl
    scan on
-   # wait until you see the printer's name (e.g. PL70e-BT_5D17), note the
+   # wait until you see the printer's name (e.g. PL70e-BT_XXXX), note the
    # address WITHOUT "-LE" in the name (that is the BLE one)
    pair <CLASSIC-ADDRESS>
    scan off
